@@ -18,8 +18,12 @@ const useQuestionNavigation = (totalQuestions: number) => {
       return newIndex >= 0 ? newIndex : prevIndex;
     });
   };
+  const handleRestart = () => {
+    setCurrentQuestionIndex(0);
+    return currenQuestionIndex;
+  } 
 
-  return { currenQuestionIndex, handleNextQuestion, handlePreviousQuestion, questinonAnswered, setQuestionAnswered };
+  return { currenQuestionIndex, handleNextQuestion, handlePreviousQuestion, questinonAnswered, setQuestionAnswered, handleRestart };
 };
 
 export default useQuestionNavigation;

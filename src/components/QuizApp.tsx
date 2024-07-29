@@ -30,7 +30,7 @@ const QuizApp = ({ quiz, loading, error }: Props) => {
     handleNextQuestion,
     handlePreviousQuestion,
     questinonAnswered,
-    setQuestionAnswered,
+    setQuestionAnswered
   } = useQuestionNavigation(totalQuestions);
 
   const currentQuestion = quiz[currenQuestionIndex];
@@ -48,7 +48,7 @@ const QuizApp = ({ quiz, loading, error }: Props) => {
   };
 
   const newOptions = shuffleArray(allAnswers);
-  const { handleOptionClick, score, selectedOption, isOptionSelected, reset } =
+  const { handleOptionClick, score, selectedOption, isOptionSelected, reset, } =
     useChechAnswer(currentQuestion);
 
   useEffect(() => {
@@ -143,7 +143,8 @@ const QuizApp = ({ quiz, loading, error }: Props) => {
             >
               Previous
             </Button>
-            <Button
+            {/* <Button
+            onClick={() => handleRestart()}
               backgroundColor={"black"}
               color={"white"}
               _hover={{
@@ -153,7 +154,7 @@ const QuizApp = ({ quiz, loading, error }: Props) => {
               }}
             >
               Restart
-            </Button>
+            </Button> */}
             <Button
               onClick={() => {
                 handleNextQuestion();

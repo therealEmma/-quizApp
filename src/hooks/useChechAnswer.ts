@@ -17,7 +17,12 @@ const useChechAnswer = (currentQuestion: Quiz) => {
       setQuestionAnswered(true);
       if (option === currentQuestion?.correct_answer) {
         setScore(score + 1);
+        alert("Correct")
       }
+      else if(option !== currentQuestion?.correct_answer){
+        alert("Wrong Answer! Go the next question")
+      }
+    
     }
   };
 
